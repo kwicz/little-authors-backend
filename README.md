@@ -4,4 +4,4 @@ brew services start mongodb-community@4.4
 mongo
 ```
 
-DB name: `little-authors`
+DB name: `books`
