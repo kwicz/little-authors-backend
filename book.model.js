@@ -14,6 +14,9 @@ let Book = new Schema({
     book_completed: {
         type: Boolean
     }
+    book_pages: {
+        type: Array
+    }
 });
 
 module.exports = mongoose.model('Book', Book);

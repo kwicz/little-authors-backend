@@ -45,6 +45,7 @@ bookRoutes.route('/update/:id').post(function(req, res) {
             book.book_author = req.body.book_author;
             book.book_description = req.body.book_description;
             book.book_completed = req.body.book_completed;
+            book.book_pages = req.body.book_pages;
 
             book.save().then(book => {
                 res.json('book updated!');
