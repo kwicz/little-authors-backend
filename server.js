@@ -46,6 +46,25 @@ bookRoutes.route('/update/:id').post(function(req, res) {
             book.book_description = req.body.book_description;
             book.book_completed = req.body.book_completed;
             book.book_pages = req.body.book_pages;
+            book.save().then(book => {
+                res.json('book updated!');
+            })
+            .catch(err => {
+                res.status(400).send("Update not possible");
+            });
+    });
+});
+
+bookRoutes.route('/addpage/:id').post(function(req, res) {
+    book => {
+        res.json('req: ', req);
+    }
+    Book.findById(req.params.id, function(err, page) {
+        if (!page)
+            res.status(404).send("data is not found");
+        else
+            res.status(200).send("Page data: ", page);
+            book.book_pages = book.book_pages.push(req.body.page);
 
             book.save().then(book => {
                 res.json('book updated!');
